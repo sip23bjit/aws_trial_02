@@ -4,4 +4,8 @@ files:
   - source: /
     destination: /var/www/html
     overwrite: true
-    runas: root
+hooks:
+  BeforeInstall:
+    - location: scripts/start.sh
+      timeout: 300
+      runas: root
